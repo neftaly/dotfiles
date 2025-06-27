@@ -18,7 +18,7 @@ set $term gnome-terminal
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu fuzzel || pkill fuzzel
 
 include /etc/sway/config-vars.d/*
 include /etc/sway/config.d/*
@@ -213,6 +213,7 @@ exec_always {
     blueman-applet
     nm-applet --indicator
     lxpolkit
+    gammastep -l -35:174 -t 6500:3000
 }
 
 #
@@ -250,3 +251,7 @@ exec_always {
     gsettings	set	$gnome-schema org.gnome.desktop.interface
     gsettings	set	$kvantum-theme 'Dracula'
 }
+
+output DP-1     position 1920 0         scale 1.5
+output DP-2	position 1920 0		scale 1.5
+output eDP-1	position 4480 180	scale 2
